@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('usuario_id')->references('id')->on('usuarios');
+            $table->foreignId('forma_de_pagamento_id')->references('id')->on('formas_de_pagamento');
+            $table->decimal('total', 8, 2);
+            $table->string('status'); 
             $table->timestamps();
         });
     }
