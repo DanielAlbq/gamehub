@@ -2,6 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\formaPagamentoController;
+use App\Http\Controllers\EstoqueController;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\PedidoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,4 +23,21 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::resource('usuarios', UserController::class);
+
+Route::resource('categorias', CategoriaController::class);
+
+Route::resource('formaPagamento', formaPagamentoController::class);
+
+Route::resource('estoque', EstoqueController::class);
+
+Route::resource('produtos', ProdutoController::class);
+
+Route::resource('pedidos', PedidoController::class);
+
+
 require __DIR__.'/auth.php';
+
+
+
+
