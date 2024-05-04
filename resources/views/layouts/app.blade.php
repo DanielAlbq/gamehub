@@ -14,6 +14,36 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
+    <div class="flex">
+                <!-- Logo -->
+                <div class="shrink-0 flex items-center">
+                    <a href="{{ route('dashboard') }}">
+                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Home') }}
+                    </x-nav-link>
+                    <x-nav-link  href="{{ route('produtos.index') }}">
+                        {{ __('Produtos') }}
+                    </x-nav-link>
+                    <x-nav-link  href="{{ route('categorias.index') }}">
+                        {{ __('Categorias') }}
+                    </x-nav-link>
+                    <x-nav-link  href="{{ route('estoque.index') }}">
+                        {{ __('Estoque') }}
+                    </x-nav-link>
+                    <x-nav-link  href="{{ route('formaPagamento.index') }}">
+                        {{ __('Forma de pagamento') }}
+                    </x-nav-link>
+                    <x-nav-link  href="{{ route('pedidos.index') }}">
+                        {{ __('Pedidos') }}
+                    </x-nav-link>
+                </div>
+            </div>
     <body class="font-sans antialiased">
     <div class="container">
         @yield('content')

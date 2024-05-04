@@ -12,14 +12,14 @@ class PedidoController extends Controller
     public function index()
     {
         $pedidos = Pedido::with(['usuario', 'formaDePagamento'])->get();
-        return view('pedidos.index', compact('pedidos'));
+        return view('pedido.index', compact('pedidos'));
     }
 
     public function create()
     {
         $usuarios = User::all();
         $formasDePagamento = formaPagamento::all();
-        return view('pedidos.create', compact('usuarios', 'formasDePagamento'));
+        return view('pedido.create', compact('usuarios', 'formasDePagamento'));
     }
 
     public function store(Request $request)
@@ -40,7 +40,7 @@ class PedidoController extends Controller
         $pedido = Pedido::with(['usuario', 'formaDePagamento'])->findOrFail($id);
         $usuarios = User::all();
         $formasDePagamento = formaPagamento::all();
-        return view('pedidos.edit', compact('pedido', 'usuarios', 'formasDePagamento'));
+        return view('pedido.edit', compact('pedido', 'usuarios', 'formasDePagamento'));
     }
 
     public function update(Request $request, $id)
@@ -53,18 +53,18 @@ class PedidoController extends Controller
         ]);
 
         Pedido::whereId($id)->update($validatedData);
-        return redirect()->route('pedidos.index');
+        return redirect()->route('pedido.index');
     }
 
     public function destroy($id)
     {
         Pedido::findOrFail($id)->delete();
-        return redirect()->route('pedidos.index');
+        return redirect()->route('pedido.index');
     }
 
     public function show($id)
     {
         $pedido = Pedido::with(['usuario', 'formaDePagamento'])->findOrFail($id);
-        return view('pedidos.show', compact('pedido'));
+        return view('pedido.show', compact('pedido'));
     }
 }
