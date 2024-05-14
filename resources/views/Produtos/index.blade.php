@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
     <h1>Produtos</h1>
+    
     <a href="{{ route('produtos.create') }}">Adicionar Novo Produto</a>
     <ul>
         @foreach ($produtos as $produto)

@@ -1,0 +1,105 @@
+.container-produto {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.form-produto {
+    background-color: #2D3748;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-produto label {
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-produto .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #E2E8F0;
+    color: #E2E8F0;
+    background-color: #1A202C; /* fundo mais escuro para os inputs */
+}
+
+.form-produto .form-control:focus {
+    border-color: #4A90E2;
+    box-shadow: none;
+    outline: none;
+}
+
+.form-produto button {
+    background-color: #4A90E2;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: white;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    padding: 8px;
+    background-color: white;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #676767;
+    border-color: #676767;
+}
