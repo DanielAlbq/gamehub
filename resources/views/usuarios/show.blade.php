@@ -1,15 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>Visualizar Usuário</h1>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">{{ $usuario->name }}</h5>
-            <p class="card-text">{{ $usuario->email }}</p>
-            <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-warning">Editar</a>
-            <a href="{{ route('usuarios.index') }}" class="btn btn-secondary">Voltar</a>
-        </div>
-    </div>
+<link rel="stylesheet" href="{{ asset('css/view.css') }}">
+
+<h1>Detalhes do Usuário</h1>
+<div class="usuario-detalhes">
+    <p><strong>Nome:</strong> {{ $usuario->name }}</p>
+    <p><strong>Email:</strong> {{ $usuario->email }}</p>
+    <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-warning">Editar</a>
+    <a href="{{ route('usuarios.index') }}" class="btn btn-primary">Voltar para a lista</a>
 </div>
 @endsection

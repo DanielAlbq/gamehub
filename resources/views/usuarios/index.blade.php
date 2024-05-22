@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/produtos.css') }}">
+
 <div class="container">
     <h1>Usuários</h1>
     <a href="{{ route('usuarios.create') }}" class="btn btn-primary">Adicionar Usuário</a>

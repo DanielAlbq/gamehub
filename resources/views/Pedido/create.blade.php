@@ -7,7 +7,7 @@
         <label for="usuario_id">Usuário:</label>
         <select name="usuario_id" id="usuario_id" required>
             @foreach ($usuarios as $usuario)
-                <option value="{{ $usuario->id }}">{{ $usuario->name }}</option>
+                <option value="{{ $usuario->id }}">{{ $usuario->nome }}</option>
             @endforeach
         </select>
         <label for="forma_de_pagamento_id">Forma de Pagamento:</label>

@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/newEdit.css') }}">
+
 <div class="container">
     <h1>Criar Novo Usuário</h1>
     <form action="{{ route('usuarios.store') }}" method="POST">
