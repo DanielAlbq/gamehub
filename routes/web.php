@@ -8,6 +8,7 @@ use App\Http\Controllers\formaPagamentoController;
 use App\Http\Controllers\EstoqueController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\UsuarioController;
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -16,7 +17,7 @@ Route::get('/', function () {
 // Route::get('usuarios', [UserController::class, 'index'])->name('usuarios.index');
 // Route::get('usuarios/create', [UserController::class, 'create'])->name('usuarios.create');
 // Route::post('usuarios', [UserController::class, 'store'])->name('usuarios.store');
-Route::resource('usuarios', UserController::class);
+Route::resource('usuarios', UsuarioController::class);
 
 
 Route::get('/home', function () {

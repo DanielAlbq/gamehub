@@ -51,6 +51,9 @@
                             <x-nav-link :href="route('pedidos.index')" :active="request()->routeIs('pedidos.index')">
                                 {{ __('Pedidos') }}
                             </x-nav-link>
+                            <x-nav-link :href="route('usuarios.index')" :active="request()->routeIs('usuarios.index')">
+                                {{ __('Usuarios') }}
+                            </x-nav-link>
                         </div>
                     </div>
                     <div class="hidden sm:flex sm:items-center sm:ml-6">
