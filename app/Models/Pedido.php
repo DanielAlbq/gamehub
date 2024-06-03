@@ -13,7 +13,7 @@ class Pedido extends Model
     // Relacionamento com usuário
     public function usuario()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Usuario::class);
     }
 
     // Relacionamento com forma de pagamento

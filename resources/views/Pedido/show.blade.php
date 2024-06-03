@@ -10,6 +10,6 @@
     <p><strong>Forma de Pagamento:</strong> {{ $pedido->formaDePagamento->metodo }}</p>
     <p><strong>Total:</strong> R$ {{ number_format($pedido->total, 2, ',', '.') }}</p>
     <p><strong>Status:</strong> {{ $pedido->status }}</p>
-    <a href="{{ route('pedido.index') }}" class="btn btn-primary">Voltar para a lista</a>
+    <a href="{{ route('pedidos.index') }}" class="btn btn-primary">Voltar para a lista</a>
 </div>
 @endsection

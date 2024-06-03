@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pedido;
-use App\Models\User;
 use App\Models\formaPagamento;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class PedidoController extends Controller
@@ -17,7 +17,7 @@ class PedidoController extends Controller
 
     public function create()
     {
-        $usuarios = User::all();
+        $usuarios = Usuario::all();
         $formasDePagamento = formaPagamento::all();
         return view('pedido.create', compact('usuarios', 'formasDePagamento'));
     }
@@ -38,7 +38,7 @@ class PedidoController extends Controller
     public function edit($id)
     {
         $pedido = Pedido::with(['usuario', 'formaDePagamento'])->findOrFail($id);
-        $usuarios = User::all();
+        $usuarios = Usuario::all();
         $formasDePagamento = formaPagamento::all();
         return view('pedido.edit', compact('pedido', 'usuarios', 'formasDePagamento'));
     }
@@ -53,13 +53,13 @@ class PedidoController extends Controller
         ]);
 
         Pedido::whereId($id)->update($validatedData);
-        return redirect()->route('pedido.index');
+        return redirect()->route('pedidos.index');
     }
 
     public function destroy($id)
     {
         Pedido::findOrFail($id)->delete();
-        return redirect()->route('pedido.index');
+        return redirect()->route('pedidos.index');
     }
 
     public function show($id)

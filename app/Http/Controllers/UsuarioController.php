@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -10,7 +10,7 @@ class UsuarioController extends Controller
 {
     public function index()
     {
-        $usuarios = User::all();
+        $usuarios = Usuario::all();
         return view('usuarios.index', compact('usuarios'));
     }
 
@@ -23,25 +23,25 @@ class UsuarioController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:usuarios,email',
             'password' => 'required|string|min:8',
         ]);
 
         $validatedData['password'] = Hash::make($validatedData['password']);
-        User::create($validatedData);
+        Usuario::create($validatedData);
 
         return redirect()->route('usuarios.index')->with('success', 'Usuário cadastrado com sucesso!');
     }
 
     public function show($id)
     {
-        $usuario = User::findOrFail($id);
+        $usuario = Usuario::findOrFail($id);
         return view('usuarios.show', compact('usuario'));
     }
 
     public function edit($id)
     {
-        $usuario = User::findOrFail($id);
+        $usuario = Usuario::findOrFail($id);
         return view('usuarios.edit', compact('usuario'));
     }
 
@@ -49,7 +49,7 @@ class UsuarioController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $id,
+            'email' => 'required|string|email|max:255|unique:usuarios,email,' . $id,
             'password' => 'sometimes|min:8',
         ]);
 
@@ -59,7 +59,7 @@ class UsuarioController extends Controller
             unset($validatedData['password']);
         }
 
-        $usuario = User::findOrFail($id);
+        $usuario = Usuario::findOrFail($id);
         $usuario->update($validatedData);
 
         return redirect()->route('usuarios.index')->with('success', 'Usuário atualizado com sucesso!');
@@ -67,7 +67,7 @@ class UsuarioController extends Controller
 
     public function destroy($id)
     {
-        User::findOrFail($id)->delete();
+        Usuario::findOrFail($id)->delete();
         return redirect()->route('usuarios.index')->with('success', 'Usuário deletado com sucesso!');
     }
 }
