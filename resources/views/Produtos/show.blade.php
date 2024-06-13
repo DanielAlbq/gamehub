@@ -9,7 +9,7 @@
     <p><strong>Descrição:</strong> {{ $produto->descricao }}</p>
     <p><strong>Preço:</strong> R$ {{ number_format($produto->preco, 2, ',', '.') }}</p>
     <p><strong>Categoria:</strong> {{ $produto->categoria->nome }}</p>
-    <p><strong>Quantidade em Estoque:</strong> {{ $produto->estoque->quantidade }}</p>
+    <p><strong>Quantidade em Estoque:</strong> {{ $produto->quantidade }}</p>
     <a href="{{ route('produtos.index') }}" class="btn btn-primary">Voltar para a lista</a>
 </div>
 @endsection

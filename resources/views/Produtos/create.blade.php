@@ -23,19 +23,15 @@
         </div>
 
         <div class="form-group">
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" name="quantidade" id="quantidade" required>
+        </div>
+
+        <div class="form-group">
             <label for="categoria_id">Categoria:</label>
             <select name="categoria_id" id="categoria_id" required>
                 @foreach ($categorias as $categoria)
                     <option value="{{ $categoria->id }}">{{ $categoria->nome }}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="estoque_id">Estoque:</label>
-            <select name="estoque_id" id="estoque_id" required>
-                @foreach ($estoques as $estoque)
-                    <option value="{{ $estoque->id }}">{{ $estoque->quantidade }}</option>
                 @endforeach
             </select>
         </div>

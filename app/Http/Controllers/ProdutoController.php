@@ -11,15 +11,14 @@ class ProdutoController extends Controller
 {
     public function index()
     {
-        $produtos = Produto::with(['categoria', 'estoque'])->get();
+        $produtos = Produto::with('categoria')->get();
         return view('produtos.index', compact('produtos'));
     }
 
     public function create()
     {
         $categorias = Categoria::all();
-        $estoques = Estoque::all();
-        return view('produtos.create', compact('categorias', 'estoques'));
+        return view('produtos.create', compact('categorias'));
     }
 
     public function store(Request $request)
@@ -28,8 +27,8 @@ class ProdutoController extends Controller
             'nome' => 'required|string|max:255',
             'descricao' => 'required|string',
             'preco' => 'required|numeric',
+            'quantidade' => 'required|integer',
             'categoria_id' => 'required|exists:categorias,id',
-            'estoque_id' => 'required|exists:estoque,id',
         ]);
 
         Produto::create($validatedData);
@@ -38,10 +37,9 @@ class ProdutoController extends Controller
 
     public function edit($id)
     {
-        $produto = Produto::with(['categoria', 'estoque'])->findOrFail($id);
+        $produto = Produto::with('categoria')->findOrFail($id);
         $categorias = Categoria::all();
-        $estoques = Estoque::all();
-        return view('produtos.edit', compact('produto', 'categorias', 'estoques'));
+        return view('produtos.edit', compact('produto', 'categorias'));
     }
 
     public function update(Request $request, $id)
@@ -50,8 +48,8 @@ class ProdutoController extends Controller
             'nome' => 'required|string|max:255',
             'descricao' => 'required|string',
             'preco' => 'required|numeric',
+            'quantidade' => 'required|integer',
             'categoria_id' => 'required|exists:categorias,id',
-            'estoque_id' => 'required|exists:estoque,id',
         ]);
 
         Produto::whereId($id)->update($validatedData);
@@ -66,7 +64,7 @@ class ProdutoController extends Controller
 
     public function show($id)
     {
-        $produto = Produto::with(['categoria', 'estoque'])->findOrFail($id);
+        $produto = Produto::with('categoria')->findOrFail($id);
         return view('produtos.show', compact('produto'));
     }
 }

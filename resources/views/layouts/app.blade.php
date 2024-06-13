@@ -42,9 +42,6 @@
                             <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.index')">
                                 {{ __('Categorias') }}
                             </x-nav-link>
-                            <x-nav-link :href="route('estoque.index')" :active="request()->routeIs('estoque.index')">
-                                {{ __('Estoque') }}
-                            </x-nav-link>
                             <x-nav-link :href="route('formaPagamento.index')" :active="request()->routeIs('formaPagamento.index')">
                                 {{ __('Forma de pagamento') }}
                             </x-nav-link>

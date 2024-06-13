@@ -13,7 +13,7 @@
                 <th>Nome</th>
                 <th>Preço</th>
                 <th>Categoria</th>
-                <th>Estoque</th>
+                <th>Quantidade</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -24,7 +24,7 @@
                     <td>{{ $produto->nome }}</td>
                     <td>R$ {{ number_format($produto->preco, 2, ',', '.') }}</td>
                     <td>{{ optional($produto->categoria)->nome }}</td>
-                    <td>{{ optional($produto->estoque)->quantidade }}</td>
+                    <td>{{ $produto->quantidade }}</td>
                     <td>
                         <a href="{{ route('produtos.show', $produto->id) }}" class="btn btn-info">Ver</a>
                         <a href="{{ route('produtos.edit', $produto->id) }}" class="btn btn-warning">Editar</a>

@@ -24,22 +24,16 @@
         </div>
 
         <div class="form-group">
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" name="quantidade" id="quantidade" value="{{ $produto->quantidade }}" required>
+        </div>
+
+        <div class="form-group">
             <label for="categoria_id">Categoria:</label>
             <select name="categoria_id" id="categoria_id" required>
                 @foreach ($categorias as $categoria)
                     <option value="{{ $categoria->id }}" {{ $produto->categoria_id == $categoria->id ? 'selected' : '' }}>
                         {{ $categoria->nome }}
-                    </option>
-                @endforeach
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="estoque_id">Estoque:</label>
-            <select name="estoque_id" id="estoque_id" required>
-                @foreach ($estoques as $estoque)
-                    <option value="{{ $estoque->id }}" {{ $produto->estoque_id == $estoque->id ? 'selected' : '' }}>
-                        {{ $estoque->quantidade }}
                     </option>
                 @endforeach
             </select>
