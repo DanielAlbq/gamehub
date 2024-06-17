@@ -1,5 +1,3 @@
-<!-- resources/views/layouts/app.blade.php -->
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -33,22 +31,22 @@
 
                         <!-- Navigation Links -->
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                            <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="nav-link">
                                 {{ __('Home') }}
                             </x-nav-link>
-                            <x-nav-link :href="route('produtos.index')" :active="request()->routeIs('produtos.index')">
+                            <x-nav-link :href="route('produtos.index')" :active="request()->routeIs('produtos.index')" class="nav-link">
                                 {{ __('Produtos') }}
                             </x-nav-link>
-                            <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.index')">
+                            <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.index')" class="nav-link">
                                 {{ __('Categorias') }}
                             </x-nav-link>
-                            <x-nav-link :href="route('formaPagamento.index')" :active="request()->routeIs('formaPagamento.index')">
+                            <x-nav-link :href="route('formaPagamento.index')" :active="request()->routeIs('formaPagamento.index')" class="nav-link">
                                 {{ __('Forma de pagamento') }}
                             </x-nav-link>
-                            <x-nav-link :href="route('pedidos.index')" :active="request()->routeIs('pedidos.index')">
+                            <x-nav-link :href="route('pedidos.index')" :active="request()->routeIs('pedidos.index')" class="nav-link">
                                 {{ __('Pedidos') }}
                             </x-nav-link>
-                            <x-nav-link :href="route('usuarios.index')" :active="request()->routeIs('usuarios.index')">
+                            <x-nav-link :href="route('usuarios.index')" :active="request()->routeIs('usuarios.index')" class="nav-link">
                                 {{ __('Usuarios') }}
                             </x-nav-link>
                         </div>
@@ -57,7 +55,7 @@
                         @auth
                             <x-dropdown align="right" width="48">
                                 <x-slot name="trigger">
-                                    <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                    <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out nav-link">
                                         <div>{{ Auth::user()->name }}</div>
 
                                         <div class="ml-1">
@@ -75,18 +73,18 @@
 
                                         <x-dropdown-link :href="route('logout')"
                                                 onclick="event.preventDefault();
-                                                        this.closest('form').submit();">
+                                                        this.closest('form').submit();" class="nav-link">
                                             {{ __('Logout') }}
                                         </x-dropdown-link>
                                     </form>
                                 </x-slot>
                             </x-dropdown>
                         @else
-                            <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
+                            <x-nav-link :href="route('login')" :active="request()->routeIs('login')" class="nav-link">
                                 {{ __('Login') }}
                             </x-nav-link>
                             @if (Route::has('register'))
-                                <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
+                                <x-nav-link :href="route('register')" :active="request()->routeIs('register')" class="nav-link">
                                     {{ __('Register') }}
                                 </x-nav-link>
                             @endif

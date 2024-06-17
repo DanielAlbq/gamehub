@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+    .dark\:text-gray-400 {
+        --tw-text-opacity: 1;
+        color: #000 !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .dark\:text-gray-100 {
+        --tw-text-opacity: 1;
+        color: rgb(0 0 0) !important;
+    }
+}
+

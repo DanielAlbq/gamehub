@@ -1,26 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-    <link rel="stylesheet" href="{{ asset('css/categories.css') }}">
+<link rel="stylesheet" href="{{ asset('css/produtos.css') }}">
 
-    <h1>Categorias</h1>
-    <a href="{{ route('categorias.create') }}" class="btn">Adicionar Nova Categoria</a>
-    <div class="categorias-lista">
-        <ul>
+<h1>Categorias</h1>
+<div class="container-produto">
+    <a href="{{ route('categorias.create') }}" class="btn btn-primary">Adicionar Nova Categoria</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
             @foreach ($categorias as $categoria)
-                <li>
-                    {{ $categoria->nome }}
-                    <div>
-                        <a href="{{ route('categorias.show', $categoria->id) }}">Ver</a>
-                        <a href="{{ route('categorias.edit', $categoria->id) }}">Editar</a>
-                        <form action="{{ route('categorias.destroy', $categoria->id) }}" method="POST">
+                <tr>
+                    <td>{{ $categoria->id }}</td>
+                    <td>{{ $categoria->nome }}</td>
+                    <td>
+                        <a href="{{ route('categorias.show', $categoria->id) }}" class="btn btn-info">Ver</a>
+                        <a href="{{ route('categorias.edit', $categoria->id) }}" class="btn btn-warning">Editar</a>
+                        <form action="{{ route('categorias.destroy', $categoria->id) }}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit">Deletar</button>
+                            <button type="submit" class="btn btn-danger">Deletar</button>
                         </form>
-                    </div>
-                </li>
+                    </td>
+                </tr>
             @endforeach
-        </ul>
-    </div>
+        </tbody>
+    </table>
+</div>
 @endsection
