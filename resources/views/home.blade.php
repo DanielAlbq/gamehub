@@ -1,5 +1,3 @@
-<!-- resources/views/home.blade.php -->
-
 @extends('layouts.app')
 
 @section('content')
@@ -7,9 +5,8 @@
 
 <div class="container">
     <div class="welcome-section">
-        <h1>Bem-vindo ao meu e-commerce</h1>
-        <p>Esta é a página inicial do seu site.</p>
-        <p>Explore nossos produtos e aproveite as ofertas!</p>
+        <h1>Bem-vindo ao Sistema de Controle GameHub</h1>
+        <img src="{{ asset('images/gamehub.jpeg') }}" alt="Bem-vindo" class="welcome-image">
     </div>
 </div>
 @endsection

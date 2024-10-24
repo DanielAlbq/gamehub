@@ -4,11 +4,11 @@
 
 
 .nav-link {
-    color: black;
+    color: #ccc;
 }
 
 .nav-link:hover {
-    color: black;
+    color: #dedede;
     text-decoration: underline;
 }
 

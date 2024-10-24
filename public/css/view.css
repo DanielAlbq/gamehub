@@ -93,21 +93,22 @@ h1 {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #1e1e1e;
     margin: 0;
     padding: 0;
 }
 
 h1 {
     font-size: 2em;
-    color: #333;
+    color: #D1C4E9;
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 p {
     font-size: 1.2em;
-    color: #666;
+    color: #B39DDB;
     text-align: center;
     margin: 10px 0;
 }
@@ -115,24 +116,44 @@ p {
 a {
     display: inline-block;
     text-decoration: none;
-    color: #007bff;
+    color: #9575CD;
     font-size: 1em;
     margin: 20px 0;
     text-align: center;
-    display: block;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #B388FF;
+}
+
+.produto-detalhes, .usuario-detalhes {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #7E57C2;
+    border-radius: 8px;
+    background-color: #2C2A3E;
+}
+
+.produto-detalhes p, .usuario-detalhes p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #E0E0E0;
+}
+
+.usuario-detalhes p strong {
+    display: inline-block;
+    width: 100px;
 }
 
 .form-produto {
     width: 50%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #3A3055;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .form-group {
@@ -143,6 +164,7 @@ a:hover {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    color: #D1C4E9;
 }
 
 .form-group input[type="text"],
@@ -151,9 +173,11 @@ a:hover {
 .form-group select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #9575CD;
     border-radius: 5px;
     font-size: 1em;
+    background-color: #2C2A3E;
+    color: #E0E0E0;
 }
 
 .form-group textarea {
@@ -162,16 +186,44 @@ a:hover {
 
 .btn {
     display: inline-block;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #7E57C2;
+    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
     text-align: center;
+    margin: 10px 5px;
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #5E35B1;
+}
+
+.btn-warning {
+    background-color: #D4AFFF;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background-color: #B388FF;
+}
+
+.btn-primary {
+    background-color: #7E57C2;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #5E35B1;
+}
+
+.btn-danger {
+    background-color: #B6174B;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #880E4F;
 }

@@ -1,0 +1,10 @@
+.welcome-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.welcome-image {
+    max-width: 100%;
+    height: auto; 
+    margin-top: 20px; 
+}

@@ -41,7 +41,7 @@
                                 {{ __('Categorias') }}
                             </x-nav-link>
                             <x-nav-link :href="route('formaPagamento.index')" :active="request()->routeIs('formaPagamento.index')" class="nav-link">
-                                {{ __('Forma de pagamento') }}
+                                {{ __('Formas de pagamento') }}
                             </x-nav-link>
                             <x-nav-link :href="route('pedidos.index')" :active="request()->routeIs('pedidos.index')" class="nav-link">
                                 {{ __('Pedidos') }}
