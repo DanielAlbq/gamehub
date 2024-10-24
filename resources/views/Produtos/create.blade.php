@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/newEdit.css') }}">
 
     <h1>Criar Novo Produto</h1>
-    <form action="{{ route('produtos.store') }}" method="POST" class="form-produto">
+    <form action="{{ route('produtos.store') }}" method="POST" class="form-produto" enctype="multipart/form-data"> <!-- Adiciona enctype -->
         @csrf
 
         <div class="form-group">
@@ -34,6 +34,12 @@
                     <option value="{{ $categoria->id }}">{{ $categoria->nome }}</option>
                 @endforeach
             </select>
+        </div>
+
+        <!-- Novo campo para imagem -->
+        <div class="form-group">
+            <label for="imagem">Imagem:</label>
+            <input type="file" name="imagem" id="imagem" accept="image/*"> <!-- Campo para upload de imagem -->
         </div>
 
         <button type="submit" class="btn btn-primary">Salvar</button>

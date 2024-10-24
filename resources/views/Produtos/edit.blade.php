@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/newEdit.css') }}">
 
     <h1>Editar Produto</h1>
-    <form action="{{ route('produtos.update', $produto->id) }}" method="POST" class="form-produto">
+    <form action="{{ route('produtos.update', $produto->id) }}" method="POST" class="form-produto" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -37,6 +37,17 @@
                     </option>
                 @endforeach
             </select>
+        </div>
+
+        <div class="form-group">
+            <label for="imagem">Imagem:</label>
+            <input type="file" name="imagem" id="imagem" accept="image/*">
+            @if ($produto->imagem)
+                <div class="current-image">
+                    <p>Imagem atual:</p>
+                    <img src="{{ asset('storage/' . $produto->imagem) }}" alt="{{ $produto->nome }}" style="max-width: 150px; max-height: 150px;">
+                </div>
+            @endif
         </div>
 
         <button type="submit" class="btn btn-primary">Atualizar</button>

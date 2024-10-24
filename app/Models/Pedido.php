@@ -19,7 +19,14 @@ class Pedido extends Model
     // Relacionamento com forma de pagamento
     public function formaDePagamento()
     {
-        return $this->belongsTo(formaPagamento::class);
+        return $this->belongsTo(FormaPagamento::class);
     }
 
+    // Relacionamento com produtos (Many-to-Many)
+    public function produtos()
+    {
+        return $this->belongsToMany(Produto::class, 'pedido_produto')
+                    ->withPivot('quantidade')
+                    ->withTimestamps();
+    }
 }

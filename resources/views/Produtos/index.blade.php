@@ -10,6 +10,7 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Imagem</th> <!-- Nova coluna para imagem -->
                 <th>Nome</th>
                 <th>Preço</th>
                 <th>Categoria</th>
@@ -21,6 +22,13 @@
             @foreach ($produtos as $produto)
                 <tr>
                     <td>{{ $produto->id }}</td>
+                    <td>
+                        @if($produto->imagem) <!-- Verifica se a imagem existe -->
+                            <img src="{{ asset('storage/' . $produto->imagem) }}" alt="{{ $produto->nome }}" class="produto-imagem" style="width: 50px; height: auto;">
+                        @else
+                            <img src="{{ asset('path/to/default/image.png') }}" alt="Imagem padrão" class="produto-imagem" style="width: 50px; height: auto;"> <!-- Imagem padrão -->
+                        @endif
+                    </td>
                     <td>{{ $produto->nome }}</td>
                     <td>R$ {{ number_format($produto->preco, 2, ',', '.') }}</td>
                     <td>{{ optional($produto->categoria)->nome }}</td>
